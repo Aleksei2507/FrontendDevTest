@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 html,
 body,
 div,
@@ -133,5 +133,177 @@ body {
     position: absolute;
     left: 0px;
     top: 0px;
+    padding-top: 40px;
     background-color: aliceblue
+}
+
+.like_btn{
+    padding: 5px 10px;
+    text-align: center;
+    width: 80px;
+    margin: 0 auto;
+    transition: all 0.5s ease;
+}
+
+.flex_display{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+
+.control_jquery,
+.control_css{
+    margin: 5px auto;
+}
+
+.css_start,
+.j_start{
+    border: 1px solid #017E01;
+    background: #017E01;
+    color: #fff;
+}
+
+.css_start:hover,
+.j_start:hover{
+    background: #fff;
+    color: #017E01;
+    cursor: pointer;
+}
+
+.css_reset,
+.j_reset{
+    border: 1px solid #ff0000;
+    background: #ff0000;
+    color: #fff;
+}
+
+.css_reset:hover,
+.j_reset:hover{
+    background: #fff;
+    color: #ff0000;
+    cursor: pointer;
+}
+
+.FadeOut{
+    opacity: 0;
+    background: #dedede;
+}
+
+.action_FadeOut{
+     -webkit-animation: fadeout 3s ease forwards;
+    animation: fadeout 3s ease forwards;
+}
+
+@-webkit-keyframes fadeout {
+    0%   {opacity: 0}
+    50%  {opacity: 1}
+    100% {opacity: 0}
+}
+
+.@keyframes fadeout {
+     0%   {opacity: 0}
+    50%  {opacity: 1}
+    100% {opacity: 0}
+}
+
+.Rotate{
+    transform: rotate(0);
+    background: #1be51b;
+}
+
+.action_Rotate{
+    -webkit-animation: rotate 3s ease;
+    animation: rotate 3s ease;
+}
+
+@-webkit-keyframes rotate {
+    0%   {transform: rotate(0)}
+    100% {transform: rotate(360deg)}
+}
+
+.@keyframes rotate {
+    0%   {transform: rotate(0)}
+    100% {transform: rotate(360deg)}
+}
+
+.Scale{
+    background: #0031f7;
+    color: #fff;
+}
+
+.action_Scale{
+    -webkit-animation: scale 3s ease;
+    animation: scale 3s ease;
+}
+
+@-webkit-keyframes scale {
+    0%   {transform: scale(1)}
+    50%  {transform: scale(1.5)}
+    100% {transform: scale(1)}
+}
+
+.@keyframes scale {
+    0%   {transform: scale(1)}
+    50%  {transform: scale(1.5)}
+    100% {transform: scale(1)}
+}
+
+.Move{
+    position: relative;
+    background: #ffe500;
+}
+
+.action_Move{
+    -webkit-animation: move 3s ease;
+    animation: move 3s ease;
+}
+
+@-webkit-keyframes move {
+    0%   {top: 0;}
+    50%  {top: 20px;}
+    100% {top: 0px;}
+}
+
+.@keyframes move {
+    0%   {top: 0;}
+    50%  {top: 20px;}
+    100% {top: 0px;}
+}
+
+.J_FadeIn{
+    opacity: 0;
+}
+
+.jquery_anim{
+    position: relative;
+}
+
+.J_Animate{
+    position: absolute;
+    top: 0;
+    left: 50px;
+}
+
+.animation_jquery{
+    margin: 10px auto;
+}
+
+.J_FadeIn{
+    background: #00f2ff;
+}
+
+.J_FadeOut{
+    background: #dc00ff;
+    color: #fff;
+}
+
+.J_Zoom{
+    background: #000;
+    color: #fff;
+}
+
+.J_Animate{
+    background: #f90;
 }

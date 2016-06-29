@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="utf-8">
@@ -20,6 +20,14 @@
 		 width:1024px;
 		 height:768px;
 	}
+        
+        .land:hover{
+            fill: #94afc5;
+        }
+        
+        path.land_select{
+            fill: red;
+        }
 
     </style>
 </head>
@@ -140,6 +148,15 @@
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script>
         $(function () {
+            $('.land').on('click', function(){
+                var elm = $(this);
+                var cls = 'land_select'
+                if ($(this).attr('class') == cls){
+                    elm.attr('class', 'land');
+                }else{
+                    elm.attr('class',cls);
+                }
+            })
         });
     </script>
 </body>

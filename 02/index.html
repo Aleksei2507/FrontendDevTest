@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="utf-8">
@@ -11,14 +11,57 @@
 </head>
 <body>
     <div id="background">
-
+        <div class="css_3_anim flex_display">
+            <div class="like_btn animation_css FadeOut" data-action='FadeOut'>Css3 FadeOut</div>
+            <div class="like_btn animation_css Rotate" data-action='Rotate'>Css3 Rotate</div>
+            <div class="like_btn animation_css Scale" data-action='Scale'>Css3 Scale</div>
+            <div class="like_btn animation_css Move" data-action='Move'>Css3 Move</div>
+        </div>
+        <div class="like_btn css_start control_css">Css3 start</div>
+        <div class="like_btn css_reset control_css">Css3 reset</div>
+        <br/>
+        <div class="like_btn j_start control_jquery">Jquery start</div>
+        <div class="like_btn j_reset control_jquery">Jquery reset</div>
+        <div class="jquery_anim">
+            <div class="like_btn animation_jquery J_FadeIn">Jquery FadeIn</div>
+            <div class="like_btn animation_jquery J_FadeOut">Jquery FadeOut</div>
+            <div class="like_btn animation_jquery J_Zoom">Jquery Zoom</div>
+            <div class="like_btn animation_jquery J_Animate">Jquery Animate</div>
+        </div>
     </div>
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/jquery-ui-1.10.4.min.js"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script>
         $(function () {
-           
+           $('.css_start').on('click', function(){
+               $('.animation_css').each(function(i){
+                   var attr = $(this).data('action');
+                   $(this).addClass('action_'+attr);
+               })
+           });
+            
+           $('.css_reset').on('click', function(){
+               $('.animation_css').each(function(i){
+                   var attr = $(this).data('action');
+                   $(this).removeClass('action_'+attr);
+               })
+           });
+            
+           $('.j_start').on('click', function(){
+               // Использовал opacity потому что на моем компе подвисала анимация fadeIn() и fadeOut()
+               $('.J_FadeIn').stop().animate({'opacity':'1'});
+               $('.J_FadeOut').stop().animate({'opacity':'0'});
+               $('.J_Zoom').css('transform','scale(1.5)');
+               $('.J_Animate').stop().animate({'top':'50px','left':'150px'},500);
+           });
+            
+           $('.j_reset').on('click', function(){
+               $('.J_FadeIn').stop().animate({'opacity':'0'});
+               $('.J_FadeOut').stop().animate({'opacity':'1'});
+               $('.J_Zoom').css('transform','scale(1)');
+               $('.J_Animate').stop().animate({'top':'0','left':'50px'},500);
+           });
         });
     </script>
 </body>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="utf-8">
@@ -32,7 +32,17 @@
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script>
         $(function () {
-           
+            var target = document.getElementById('screen');
+            var cns = target.getContext('2d');
+
+            cns.strokeRect(25,25,100,50); //прямоугольник
+            cns.fillStyle = 'red'; //цвет для текста
+            cns.font = '14px sans-serif'; // размер шрифта и сам шрифт
+            cns.fillText ('Hello world!', 38, 55); //текст и его координаты на полотне
+            cns.bezierCurveTo(10, 10, 150, 90, 190, 110);
+            cns.lineWidth = 2;
+            cns.strokeStyle = "#dedede";
+            cns.stroke();
         });
     </script>
 </body>
