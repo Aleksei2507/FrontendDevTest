@@ -26,17 +26,12 @@
                     $('.map > li').each(function(){
                         var t = $(this).position().top-68; //
                         var l = $(this).position().left-260;
-//                        console.log(l);
-//                        if ( l >= yellow_pos && l <= yellow_pos+yellow_width && t >= red_pos && t <= yellow_pos+red_pos){ //
-//                            $(this).css('background','url(images/refract/man_red.png) no-repeat 0 0')
-//                        }
                        if (t >= red_pos && t <= red_pos+red_height && l >= yellow_pos && l <= yellow_pos+yellow_width){ //
                             $(this).css('background','url(images/refract/man_red.png) no-repeat 0 0')
                         }else{
                             $(this).css('background','url(images/refract/man_white.png) no-repeat 0 0')
                         }
                     })
-//                    console.log(red_pos);
                 }
             })
         });
