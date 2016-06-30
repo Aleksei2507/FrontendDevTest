@@ -129,6 +129,7 @@ body{
         }
 
         .img8 {
+            position: absolute;
             width: 315px;
             left: 653px;
             top: 188px;

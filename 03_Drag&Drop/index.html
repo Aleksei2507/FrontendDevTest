@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,30 @@
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script>
         $(function () {
-
+            $('.gift').draggable({
+                containment: 'body',
+                start:function(){
+                    $(this).addClass('dragging');
+                },
+                stop:function(){
+                    $(this).removeClass('dragging');
+                },
+                revert:"invalid",
+            });
+            $('.img1').droppable({
+                over: function(e, u) { 
+                    var elm = u.draggable[0]; 
+                    $(elm).stop().animate({'top': 400},500,function(){
+                        $(this).remove();
+                        if ($('.gift').length == 0){
+                            $('.img7').stop().animate({'left':0},500);
+                            $('.img8').fadeIn('fast');
+                            $('.bg').fadeOut('fast');
+                        }
+                    });
+                    
+                }
+            });
         });
     </script>
 </body>
