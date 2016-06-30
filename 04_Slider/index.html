@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -38,13 +38,14 @@
             z-index: 3;
         }
         
-        .Layer4 {
+        .ui-slider-handle {
             background-size: 100% 100%;
             position: absolute;
             top: 0px;
             left: 0px;
             width: 53px;
             height: 53px;
+            margin-left: -24px;
             z-index: 400;
             background-image: url(images/71/Layer4.png);
         }
@@ -182,7 +183,7 @@
     <div class="Layer3"></div>
     <div class="textFooter">0</div>
     <div class="parentSlider">
-        <div class="Layer4"></div>
+<!--        <div class="Layer4"></div>-->
     </div>
     <div class="Peshki">
         <div class="Layer5 p10"></div>
@@ -202,7 +203,55 @@
     <script src="js/hammer.js"></script>
     <script>
         $(function () {
-           
+            $('.parentSlider').slider({
+                slide: function(e, u) { 
+                    var v = u.value;
+                    $('.textFooter').text(u.value);
+                    if (v == 0){
+                        $('.Peshki > div').fadeOut('fast');
+                    }
+                    else if (v <= 10){
+                        $('.Peshki > div').not('.p1').fadeOut('fast');
+                        $('.p1').fadeIn('fast'); 
+                    }
+                    else if (v <= 20) {
+                        $('.Peshki > div').not('.p1, .p2').fadeOut('fast');
+                        $('.p2').fadeIn('fast');
+                    }
+                    else if (v <= 30) {
+                        $('.Peshki > div').not('.p1, .p2, .p3').fadeOut('fast');
+                        $('.p3').fadeIn('fast');
+                    }
+                    else if (v <= 40) {
+                        $('.Peshki > div').not('.p1, .p2, .p3, .p4').fadeOut('fast');
+                        $('.p4').fadeIn('fast');
+                    }
+                    else if (v <= 50) {
+                        $('.Peshki > div').not('.p1, .p2, .p3, .p4, .p5').fadeOut('fast');
+                        $('.p5').fadeIn('fast');
+                    }
+                    else if (v <= 60) {
+                        $('.Peshki > div').not('.p1, .p2, .p3, .p4, .p5, .p6').fadeOut('fast');
+                        $('.p6').fadeIn('fast');
+                    }
+                    else if (v <= 70) {
+                        $('.Peshki > div').not('.p1, .p2, .p3, .p4, .p5, .p6, .p7').fadeOut('fast');
+                        $('.p7').fadeIn('fast');
+                    }
+                    else if (v <= 80) {
+                        $('.Peshki > div').not('.p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8').fadeOut('fast');
+                        $('.p8').fadeIn('fast');
+                    }
+                    else if (v <= 90) {
+                        $('.Peshki > div').not('.p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9').fadeOut('fast');
+                        $('.p9').fadeIn('fast');
+                    }
+                    else if (v <= 100) {
+                        $('.Peshki > div').not('.p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9, .p10').fadeOut('fast');
+                        $('.p10').fadeIn('fast');
+                    }
+                }
+           });
         });
     </script>
 </body>
