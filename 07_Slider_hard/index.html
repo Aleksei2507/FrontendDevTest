@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -14,6 +14,31 @@
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script>
         $(function () {
+            var yellow_pos = $('.drag_yellow').position().left+40; //Прибавляем padding-left
+            var yellow_width = $('.drag_yellow').width();
+            var red_height = $('.drag_red').height();
+            var red_pos;
+            $('.drag_red').draggable({
+                containment: "parent",
+                "axis": "y",
+                drag: function(e,u){
+                    red_pos = u.position.top;
+                    $('.map > li').each(function(){
+                        var t = $(this).position().top-68; //
+                        var l = $(this).position().left-260;
+//                        console.log(l);
+//                        if ( l >= yellow_pos && l <= yellow_pos+yellow_width && t >= red_pos && t <= yellow_pos+red_pos){ //
+//                            $(this).css('background','url(images/refract/man_red.png) no-repeat 0 0')
+//                        }
+                       if (t >= red_pos && t <= red_pos+red_height && l >= yellow_pos && l <= yellow_pos+yellow_width){ //
+                            $(this).css('background','url(images/refract/man_red.png) no-repeat 0 0')
+                        }else{
+                            $(this).css('background','url(images/refract/man_white.png) no-repeat 0 0')
+                        }
+                    })
+//                    console.log(red_pos);
+                }
+            })
         });
     </script>
 </head>
