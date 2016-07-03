@@ -208,20 +208,12 @@
             }
             var stop_pos = 0;
             $('.parentSlider').slider({
-//                stop: function(e, u){
-//                    stop_pos = u.value;
-//                },
-                change: function(event, ui) {
-                    console.log(event);
-                },
                 slide: function(e, u) {
                     var x = e.offsetX;
-//                    console.log(stop_pos)
                     var v = u.value;
                     $('.textFooter').text(u.value);
                     var va = v/10;
                     var elm = '.p'+va.toFixed(0);
-//                    console.log(last_num(va) > stop_pos);
                     if (last_num(va) == 0) {
                         if ($(elm).css('display') == 'block'){
                             $(elm).stop().hide().prevAll().stop().hide();
