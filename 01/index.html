@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src='js/jquery-2.1.1.min.js'></script>
+    <script src='js/jquery-ui-1.10.4.min.js'></script>
+    <script src='js/script.js'></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header_title">
+            Скольким своим пациентам в течение последнего месяца<br/>
+            Вы поставили диагноз мКРР?
+        </div>
+    </header>
+    <div class="wrapper_circles">
+        <div class="big_circle"><span>12</span></div>
+        <div class="middle_circle"><span>6</span></div>
+        <div class="small_circle"><span>3</span></div>
+    </div>
+    <div class="wrapper">
+        <div class="wrap_slider">
+            <div class="slide first">
+                <div class="slide_desc">Число пациентов</div>
+                <div class="slide_line">
+                    <div class="point_drag">
+                        <a class="ui-slider-handle ui-state-default ui-corner-all"><div class='num'></div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide second">
+                <div class="slide_desc">KRAS</div>
+                <div class="slide_line">
+                    <div class="point_drag">
+                        <a class="ui-slider-handle ui-state-default ui-corner-all"><div class='num'></div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide third">
+                <div class="slide_desc">NRAS</div>
+                <div class="slide_line">
+                    <div class="point_drag">
+                        <a class="ui-slider-handle ui-state-default ui-corner-all"><div class='num'></div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
